@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Navbar/>
-      <div className='w-full bg-black h-screen'>
+      <div className='w-full bg-[#1D2B53] h-screen'>
         <img src={carpool} alt="" className=''/>
       </div>
     </div>
