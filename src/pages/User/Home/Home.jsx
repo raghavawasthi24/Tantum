@@ -1,13 +1,15 @@
 import React from 'react'
 import carpool from "../../../assets/lines.svg";
 import Navbar from '../../../components/Navbar';
+import LandingPage from './sections/LandingPage';
 
 export default function Home() {
   return (
-    <div>
+    <div className='mt-[56px]'>
       <Navbar/>
-      <div className='w-full bg-[#1D2B53] h-screen'>
-        <img src={carpool} alt="" className=''/>
+      <LandingPage/>
+      <div className='w-full h-screen absolute top-0 left-0 -z-50'>
+        <img src={carpool} alt="" className='-z-50'/>
       </div>
     </div>
   )
