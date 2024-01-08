@@ -8,9 +8,9 @@ export default function Home() {
     <div className='mt-[56px]'>
       <Navbar/>
       <LandingPage/>
-      <div className='w-full h-screen absolute top-0 left-0 -z-50'>
+      {/* <div className='w-full h-screen absolute top-0 left-0 -z-50'>
         <img src={carpool} alt="" className='-z-50'/>
-      </div>
+      </div> */}
     </div>
   )
 }
