@@ -18,29 +18,27 @@ import {
 } from "../../../../components/ui/tabs";
 import topleft from "../../../../assets/hero-top-left-image.svg";
 import topright from "../../../../assets/hero-top-right-image.svg";
+import Animation from "../../../../components/Animation";
+import bgImg from "../../../../assets/bgline.png"
 
 
 export default function LandingPage() {
   return (
-    <div className="w-full h-screen flex flex-col justify-between items-center p-6">
-      <p className="w-1/2 text-center text-4xl font-bold text-white">
-        Revolutionize Your Commute: Share Rides, Cut Costs, Go Green!
-      </p>
-      <div>
-        <Tabs defaultValue="byName" className="">
-          <TabsList className="grid grid-cols-2">
+    <div className="w-full py-20 bg-custom bg-[#272142] flex justify-between items-center p-6 relative clip-custom bg-ai">
+      
+      <div className="w-1/2">
+        <p className="text-6xl font-bold text-white">
+          Revolutionize Your Commute: Share Rides, Cut Costs, Go Green!
+        </p>
+      </div>
+      <div className="w-1/2 flex items-center justify-center">
+        <Tabs defaultValue="byName" className="z-10">
+          <TabsList className="grid grid-cols-2 bg-transparent border text-background">
             <TabsTrigger value="byName">Search By Name</TabsTrigger>
             <TabsTrigger value="byLocation">Search By Location</TabsTrigger>
           </TabsList>
           <TabsContent value="byName" className="">
-            <Card>
-              <CardHeader>
-                <CardTitle>Account</CardTitle>
-                <CardDescription>
-                  Make changes to your account here. Click save when you're
-                  done.
-                </CardDescription>
-              </CardHeader>
+            <Card className="">
               <CardContent className="space-y-2">
                 <div className="space-y-1">
                   <Label htmlFor="name">Name</Label>
@@ -51,9 +49,6 @@ export default function LandingPage() {
                   <Input id="username" defaultValue="@peduarte" />
                 </div>
               </CardContent>
-              <CardFooter>
-                <Button>Save changes</Button>
-              </CardFooter>
             </Card>
           </TabsContent>
           <TabsContent value="byLocation" className="">
@@ -81,12 +76,6 @@ export default function LandingPage() {
           </TabsContent>
         </Tabs>
       </div>
-
-     <div>
-      <img src={topleft} alt="" className="absolute top-0 left-0 -z-50"/>
-      <img src={topright} alt=""  className="absolute top-0 right-0 -z-50"/>
-     </div>
-
     </div>
   );
 }

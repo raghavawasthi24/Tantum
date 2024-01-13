@@ -9,7 +9,7 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 export default function Navbar() {
   const loggedin = false;
   return (
-    <nav className="flex w-full fixed top-0 justify-between items-center px-4 py-2">
+    <nav className="flex w-full fixed bg-none top-0 justify-between items-center px-4 py-2 z-20">
       <p className="text-white font-bold text-xl md:text-4xl">Tantum.</p>
       <div className="flex items-center md:gap-2">
         <Popover>
