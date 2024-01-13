@@ -1,5 +1,4 @@
 import React from 'react'
-import carpool from "../../../assets/lines.svg";
 import Navbar from '../../../components/Navbar';
 import LandingPage from './sections/LandingPage';
 
