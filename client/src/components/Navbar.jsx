@@ -8,12 +8,12 @@ export default function Navbar() {
   const loggedin = false;
   return (
     <nav className="flex w-full fixed bg-white top-0 justify-between items-center px-4 py-2 z-20">
-      <p className="font-bold text-xl md:text-4xl">Tantum.</p>
+      <p className="font-bold text-xl md:text-4xl text-[#272142]">Tantum.</p>
       <div className="flex items-center md:gap-2">
         <Popover>
           <PopoverTrigger asChild>
             <div>
-              <FaRegBell className="w-4 h-4 cursor-pointer" />
+              <FaRegBell className="w-4 h-4 cursor-pointer text-[#272142]" />
             </div>
           </PopoverTrigger>
           <PopoverContent className="w-80">
