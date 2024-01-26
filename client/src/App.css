@@ -17,7 +17,7 @@
 }
 
 .bg-ai {
-  background-image: url("./assets/bgline.png");
+  background-image: url("../public/assets/bgline.png");
   background-color: #272142;
   background-repeat: no-repeat;
   background-position: center bottom;
