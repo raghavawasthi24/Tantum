@@ -1,7 +1,6 @@
 import React from 'react';
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
-import Flag from "../assets/india-flag.webp";
 
 export default function Footer() {
   return (
@@ -38,7 +37,7 @@ export default function Footer() {
         </div>
         <div className="flex gap-2">
           <p>&copy; 2024 All rights reserved.</p>
-          <img src={Flag} alt="" className="h-6" />
+          <img src="assets/india-flag.webp" alt="" className="h-6" />
           <p>India</p>
         </div>
       </div>
