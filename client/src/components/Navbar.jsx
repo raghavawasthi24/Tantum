@@ -1,17 +1,6 @@
 import { Button } from "./ui/button";
-import {Avatar, AvatarFallback, AvatarImage} from "./ui/avatar";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "./ui/sheet";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet";
 import { FaRegBell } from "react-icons/fa";
 import { BsPlusCircle } from "react-icons/bs";
 import { CiGlobe } from "react-icons/ci";
@@ -19,44 +8,16 @@ import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
 import { CgProfile } from "react-icons/cg";
 import { RiMotorbikeFill } from "react-icons/ri";
 import { MdPayment } from "react-icons/md";
-import { CiSettings } from "react-icons/ci";
+import { IoIosSettings } from "react-icons/io";
 import { FiLogOut } from "react-icons/fi";
-
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const loggedin = true;
-
-  const sidebar = [
-    {
-      icon: <CgProfile className="w-4 h-4 mr-2" />,
-      title: "My Profile",
-      link: "/profile",
-    },
-    {
-      icon: <RiMotorbikeFill className="w-4 h-4 mr-2" />,
-      title: "My Rides",
-      link: "/profile",
-    },
-    {
-      icon: <MdPayment className="w-4 h-4 mr-2" />,
-      title: "My Transactions",
-      link: "/profile",
-    },
-    {
-      icon: <CiSettings className="w-4 h-4 mr-2" />,
-      title: "Settings",
-      link: "/profile",
-    },
-    {
-      icon: <FiLogOut className="w-4 h-4 mr-2" />,
-      title: "Logout",
-      link: "/profile",
-    },
-  ];
   return (
     <nav className="flex w-full fixed bg-white top-0 justify-between items-center px-4 py-2 z-20">
       <p className="font-bold text-xl md:text-4xl text-[#272142]">Tantum.</p>
-      <div className="flex items-center md:gap-2">
+      <div className="flex items-center md:gap-4">
         <Popover>
           <PopoverTrigger asChild>
             <div>
@@ -72,11 +33,15 @@ export default function Navbar() {
             </div>
           </PopoverContent>
         </Popover>
-        <Button variant="ghost">
+        <Button
+          variant="outline"
+          className="bg-white sm:border sm:border-[#272142] rounded-full"
+        >
           <BsPlusCircle className="w-4 h-4 sm:mr-2" />
           <span className="hidden sm:block">Publish a ride</span>
         </Button>
-        {/* checks whether user is logged in or not */}
+        {/* condition to check whether logged In or not */}
+        {/* displays signin when loggged out otherwise profile options */}
         {loggedin ? (
           <Sheet>
             <SheetTrigger asChild>
@@ -88,30 +53,49 @@ export default function Navbar() {
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
             </SheetTrigger>
-            <SheetContent className="w-[300px] pt-10">
-              {
-                // sidebar
-                sidebar.map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center space-x-2 text-[#272142] text-md font-semibold hover:bg-[#F3F3F3] p-2 rounded-lg cursor-pointer"
-                  >
-                    {item.icon}
-                    {item.title}
-                  </div>
-                ))
-              }
-               {/* <div className="w-full flex items-center">
-                  <CgProfile className="w-4 h-4 mr-2"/>
-                  My Profile
-               </div> */}
+            <SheetContent className="w-[300px] pt-12">
+              <Link
+                to="/profile"
+                className="flex items-center text-[#4e4d4f] text-md font-medium  hover:bg-[#F3F3F3] p-2 rounded-lg cursor-pointer"
+              >
+                <CgProfile className="w-4 h-4 mr-2" />
+                My Profile
+              </Link>
+              <Link
+                to="/rides"
+                className="flex items-center text-[#4e4d4f] text-md font-medium  hover:bg-[#F3F3F3] p-2 rounded-lg cursor-pointer"
+              >
+                <RiMotorbikeFill className="w-4 h-4 mr-2" />
+                My Rides
+              </Link>
+              <Link
+                to="/payments"
+                className="flex items-center text-[#4e4d4f] text-md font-medium  hover:bg-[#F3F3F3] p-2 rounded-lg cursor-pointer"
+              >
+                <MdPayment className="w-4 h-4 mr-2" />
+                My Payments
+              </Link>
+              <Link
+                to="/settings"
+                className="flex items-center text-[#4e4d4f] text-md font-medium  hover:bg-[#F3F3F3] p-2 rounded-lg cursor-pointer"
+              >
+                <IoIosSettings className="w-4 h-4 mr-2" />
+                Settings
+              </Link>
+              <hr />
+              <Link
+                to="/logout"
+                className="flex items-center text-white bg-red-600 text-md font-medium p-2 rounded-lg cursor-pointer"
+              >
+                <FiLogOut className="w-4 h-4 mr-2" />
+                Logout
+              </Link>
             </SheetContent>
           </Sheet>
         ) : (
           <Button
-            variant="secondary"
             size="sm"
-            className="flex items-center font-semibold"
+            className="flex items-center font-semibold bg-[#272142]"
           >
             <CiGlobe className="w-4 h-4 mr-2" />
             Sign In
