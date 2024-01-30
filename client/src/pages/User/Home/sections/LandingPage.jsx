@@ -8,7 +8,7 @@ import { BsPersonFill } from "react-icons/bs";
 
 export default function LandingPage() {
   return (
-    <section className="mt-[56px] py-20 flex flex-col items-center clip-custom bg-ai gap-12">
+    <section className="mt-[56px] h-[50vh] py-20 flex flex-col items-center clip-custom bg-ai gap-12">
       <div className="flex flex-col items-center gap-2 text-white">
         <p className="text-6xl font-bold"> Book, Ride, Enjoy!</p>
         <p className="font-medium ">
