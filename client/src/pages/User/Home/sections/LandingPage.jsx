@@ -8,7 +8,7 @@ import { BsPersonFill } from "react-icons/bs";
 
 export default function LandingPage() {
   return (
-    <section className="mt-[56px] h-[50vh] py-20 flex flex-col items-center clip-custom bg-ai gap-12">
+    <section className="mt-[56px] py-20 flex flex-col items-center clip-custom bg-ai gap-12">
       <div className="flex flex-col items-center gap-2 text-white">
         <p className="text-6xl font-bold"> Book, Ride, Enjoy!</p>
         <p className="font-medium ">
@@ -17,7 +17,7 @@ export default function LandingPage() {
         </p>
       </div>
       <div className="flex">
-        <div className="bg-white p-1 rounded-sm bg-opacity-20 flex">
+        <div className="rounded-sm flex">
           <div className="relative border-r">
             <TbLocationFilled className="absolute left-2 top-3.5 h-4 w-4 text-muted-foreground" />
             <Input
@@ -40,10 +40,10 @@ export default function LandingPage() {
               className="pl-8 focus-visible:ring-0 rounded-none focus-visible:ring-offset-0 h-11"
             />
           </div>
-          <div className="relative">
+          <div className="relative w-[100px]">
             <BsPersonFill className="absolute left-2 top-3.5 h-4 w-4 text-muted-foreground" />
             <Input
-              placeholder="Search"
+              placeholder="People"
               className="pl-8 focus-visible:ring-0 rounded-none focus-visible:ring-offset-0 h-11"
             />
           </div>
